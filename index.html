@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1>Hello, multiplatform!</h1>
+                    <h1>Hello, multiplatform! V1</h1>
                 </div>
             </div>
             <div class="row">
@@ -172,11 +172,19 @@
             }
 
             const _decryptContent = function(contentId, content) {
-                _callFunction("decryptContent", [contentId, content])
+                var messageBody = {
+                    "contentId": contentId,
+                    "content": content
+                };
+                _callFunction("decryptContent", messageBody)
             }
 
             const _encryptContent = function(contentId, content) {
-                _callFunction("encryptContent", [contentId, content])
+                var messageBody = {
+                    "contentId": contentId,
+                    "content": content
+                };
+                _callFunction("encryptContent", messageBody)
             }
 
             const _onContentEncrypted = function(contentId, content) {
